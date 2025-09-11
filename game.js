@@ -87,12 +87,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function showAllCards() {
     const cards = document.querySelectorAll('.card');
+    lockBoard = true; // Bloquear clics mientras se muestran las cartas
     cards.forEach(card => card.classList.add('is-flipped'));
+
     setTimeout(() => {
       cards.forEach(card => card.classList.remove('is-flipped'));
-      lockBoard = false;
+      resetBoard(); // 🔥 Limpia firstCard, secondCard y hasFlippedCard
+      lockBoard = false; // Ahora sí desbloquea
     }, 3000); // tiempo en que se muestran las cartas 
   }
+
 
   function resetGame(message) {
     gameStateContainer.classList.remove('hidden');
@@ -100,12 +104,14 @@ document.addEventListener('DOMContentLoaded', () => {
     gameBoard.classList.add('hidden');
   }
 
+
   function startGame() {
     startButton.classList.add('hidden');
     gameBoard.classList.remove('hidden');
-    vidas = 5; // vidas 
+    vidas = 5;
     paresEncontrados = 0;
     vidasElement.textContent = vidas;
+    resetBoard(); // 🔥 Resetear estado
     loadBoard();
     setTimeout(showAllCards, 500);
   }
