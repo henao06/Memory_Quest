@@ -1,120 +1,62 @@
+<?php
+// Detectar imágenes en la carpeta "images"
+$files = glob(__DIR__ . "/images/*.{jpg,JPG,png,PNG}", GLOB_BRACE);
+
+// Filtrar imágenes válidas (excluyendo reverso.png y reverso.jpg)
+$imagenes = [];
+foreach ($files as $file) {
+  $nombre = basename($file);
+  if ($nombre === "reverso.png" || $nombre === "reverso.jpg") continue;
+  $imagenes[] = pathinfo($nombre, PATHINFO_FILENAME);
+}
+
+// Crear pares y mezclarlos
+$tablero = array_merge($imagenes, $imagenes);
+shuffle($tablero);
+?>
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Parallax Scroll</title>
+  <title>Juego de Memoria</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-
-  <styl>
-
 </head>
 
-<body>
+<body class="flex items-center justify-center min-h-screen flex-col">
 
-  <!-- Sección de bienvenida con efecto Parallax -->
-  <div class="section bg-1" id="section1">
-    <div class="text-container" id="welcome-container">
-      <h1 class="text-white text-5xl font-extrabold tracking-tight">
-        ¡bienvenido a mi juego !
-      </h1>
-      <p class="mt-4 text-gray-200">
-        desplázate hacia abajo para ver más sobre el juego.
-      </p>
-    </div>
+  <h1 class="text-4xl font-bold mb-8">Juego de Memoria</h1>
+
+  <!-- Tablero -->
+  <div id="game-board" class="grid grid-cols-4 gap-4 hidden">
+    <?php foreach ($tablero as $index => $img): ?>
+      <div class="card" data-fruta="<?= $img ?>" data-index="<?= $index ?>">
+        <div class="card-face card-back"></div>
+        <div class="card-face card-front">
+          <img src="images/<?= $img ?>.jpg" alt="imagen <?= $img ?>" class="w-full h-full object-cover">
+        </div>
+      </div>
+    <?php endforeach; ?>
   </div>
 
-  <!-- Segunda sección con mensaje central -->
-  <div class="section bg-2" id="section2">
-    <div class="text-container hidden" id="message-container">
-      <h2 class="text-white text-4xl font-extrabold tracking-tight">
-        ¡este es un juego de adivinanza!
-      </h2>
-      <p class="mt-4 text-gray-200">
-        Aqui podras divertirte y desestresarte con jugando
-      </p>
-    </div>
+  <!-- Vidas -->
+  <div id="vidas" class="mt-8 text-2xl font-semibold">
+    Vidas: <span id="vidas-count">5</span>
   </div>
 
-  <!-- Tercera sección con el enlace -->
-  <div class="section bg-3" id="section3">
-    <div class="text-container hidden" id="link-container">
-      <h2 class="text-white text-4xl font-extrabold tracking-tight">
-        Continúa tu aventura
-      </h2>
-      <p class="mt-4 text-gray-200">
-        Haz clic en el botón para ir al juego.
-      </p>
-      <br>
-      <br>
-      <a href="index.php" class="link-button">
-        Ir a la página
-      </a>
-    </div>
+  <!-- Mensaje de estado -->
+  <div id="game-state" class="mt-8 text-center hidden">
+    <div id="game-message" class="text-3xl font-bold mb-4"></div>
+    <button id="restart-button" class="btn mt-8">Volver a jugar </button>
   </div>
 
-  <scrip>
-    <script>
-      // Obtener los contenedores de mensaje, enlace y bienvenida
-      const welcomeContainer = document.getElementById('welcome-container');
-      const messageContainer = document.getElementById('message-container');
-      const linkContainer = document.getElementById('link-container');
+  <!-- Botón de inicio -->
+  <button id="start-button" class="btn mt-8">Iniciar Juego</button>
 
-      // Asegúrate de que el contenedor de bienvenida esté visible al cargar la página
-      welcomeContainer.classList.add('visible');
-      welcomeContainer.classList.remove('hidden');
+  <script src="game.js"></script>
 
-      // Función para manejar el evento de scroll
-      window.addEventListener('scroll', () => {
-        // Calcular la posición de desplazamiento actual
-        const scrollPosition = window.scrollY;
-
-        // Obtener la altura de la ventana
-        const windowHeight = window.innerHeight;
-
-        // Obtener las secciones
-        const section1 = document.getElementById('section1'); // Obtener la sección 1
-        const section2 = document.getElementById('section2');
-        const section3 = document.getElementById('section3');
-
-        // Lógica para el contenedor de bienvenida (section1)
-        // Se oculta cuando el usuario se desplaza más allá del 20% de la primera sección (ajusta este valor si quieres)
-        const section1Threshold = section1.offsetTop + (windowHeight * 0.2); // El 20% de la altura de la sección 1
-
-        if (scrollPosition > section1Threshold) {
-          welcomeContainer.classList.remove('visible');
-          welcomeContainer.classList.add('hidden');
-        } else {
-          welcomeContainer.classList.remove('hidden');
-          welcomeContainer.classList.add('visible');
-        }
-
-        // Lógica para la Sección 2
-        const section2Top = section2.offsetTop;
-        const section2VisibleThreshold = section2Top - windowHeight / 2;
-
-        if (scrollPosition > section2VisibleThreshold) {
-          messageContainer.classList.remove('hidden');
-          messageContainer.classList.add('visible');
-        } else {
-          messageContainer.classList.remove('visible');
-          messageContainer.classList.add('hidden');
-        }
-
-        // Lógica para la Sección 3
-        const section3Top = section3.offsetTop;
-        const section3VisibleThreshold = section3Top - windowHeight / 2;
-
-        if (scrollPosition > section3VisibleThreshold) {
-          linkContainer.classList.remove('hidden');
-          linkContainer.classList.add('visible');
-        } else {
-          linkContainer.classList.remove('visible');
-          linkContainer.classList.add('hidden');
-        }
-      });
-    </script>
 </body>
 
 </html>
