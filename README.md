@@ -75,37 +75,37 @@ Memory_Quest/
 
 ## Cómo Jugar - Guía Paso a Paso
 
-### 1. Página de Bienvenida
+### 2. Página de Bienvenida
 <div align="center">
   <img src="img/2.png" alt="Página de Bienvenida" width="600"/>
   <p><em>Lo primero que se abre - Página de bienvenida con efecto parallax</em></p>
 </div>
 
-### 2. Continúa la Aventura
+### 1. Continúa la Aventura
 <div align="center">
   <img src="img/1.png" alt="Continúa la Aventura" width="600"/>
   <p><em>Haciendo scroll y yendo al juego</em></p>
 </div>
 
-### 3. El Juego se Abre
-<div align="center">
-  <img src="img/5.png" alt="Juego Iniciado" width="600"/>
-  <p><em>Se abre el juego y me muestra las cartas</em></p>
-</div>
-
-### 4. Las Cartas se Esconden
+### 3. Las Cartas se Esconden
 <div align="center">
   <img src="img/3.png" alt="Cartas Escondidas" width="600"/>
   <p><em>Las cartas se voltean y se esconden</em></p>
 </div>
 
-### 5. Cómo se Juega
+### 4. El Juego se Abre
+<div align="center">
+  <img src="img/5.png" alt="Juego Iniciado" width="600"/>
+  <p><em>Se abre el juego y me muestra las cartas</em></p>
+</div>
+
+### 6. Cómo se Juega
 <div align="center">
   <img src="img/6.png" alt="Jugando" width="600"/>
   <p><em>Le das click a una y se voltea, al voltear las iguales se quedan en la pantalla</em></p>
 </div>
 
-### 6. Ganaste
+### 5. Ganaste
 <div align="center">
   <img src="img/4.png" alt="Victoria" width="600"/>
   <p><em>Gané, me felicita y aparece el botón de volver a jugar</em></p>
