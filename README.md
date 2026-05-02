@@ -1,8 +1,15 @@
-# Memory Quest
-
 <div align="center">
+  <!-- Typing SVG -->
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&width=435&lines=Welcome+memory+Quest" alt="Typing SVG" />
+  </a>
+  
+  <br>
+  
+  <!-- Imagen Principal -->
   <img src="img/1.png" alt="Memory Quest - Vista Principal" width="800"/>
 </div>
+
 
 Un juego interactivo de memoria desarrollado con PHP, JavaScript y CSS que combina efectos visuales atractivos con una experiencia de juego divertida.
 
