@@ -1,12 +1,12 @@
-# 🎮 Memory Quest
+# Memory Quest
 
 <div align="center">
-  <img src="img/image.png" alt="Juego de Memoria" width="800"/>
+  <img src="img/1.png" alt="Memory Quest - Vista Principal" width="800"/>
 </div>
 
 Un juego interactivo de memoria desarrollado con PHP, JavaScript y CSS que combina efectos visuales atractivos con una experiencia de juego divertida.
 
-## 🎯 Características
+## Características
 
 - **Juego de Memoria Clásico**: Encuentra pares de cartas idénticas
 - **Sistema de Vidas**: Comienza con 5 vidas por partida
@@ -15,14 +15,14 @@ Un juego interactivo de memoria desarrollado con PHP, JavaScript y CSS que combi
 - **Interfaz Moderna**: Diseño atractivo con Tailwind CSS
 - **Efecto Parallax**: Página de bienvenida con scroll animado
 
-## 🛠️ Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **Backend**: PHP 8.4+
 - **Frontend**: HTML5, CSS3, JavaScript (ES6+)
 - **Estilos**: Tailwind CSS, CSS3 Animations
 - **Estructura**: Arquitectura MVC ligera
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 Memory_Quest/
@@ -35,11 +35,12 @@ Memory_Quest/
 │   ├── 1.jpg - 8.jpg   # Cartas del juego
 │   └── reverso.png     # Cara posterior de las cartas
 ├── img/                # Capturas de pantalla
-│   ├── image.png       # Vista principal del juego
-│   ├── image copy.png  # Página de bienvenida
-│   ├── image copy 2.png # Juego en progreso
-│   ├── image copy 3.png # Victoria del juego
-│   └── image copy 4.png # Interfaz principal
+│   ├── 1.png           # Vista principal del juego
+│   ├── 2.png           # Página de bienvenida
+│   ├── 3.png           # Juego en progreso
+│   ├── 4.png           # Victoria del juego
+│   ├── 5.png           # Interfaz principal
+│   └── 6.png           # Captura adicional
 └── README.md           # Este archivo
 ```
 
@@ -72,42 +73,54 @@ Memory_Quest/
    http://localhost:8080
    ```
 
-## 🎮 Cómo Jugar
+## Cómo Jugar - Guía Paso a Paso
 
+### 1. Página de Bienvenida
 <div align="center">
-  <img src="img/image copy.png" alt="Página de Bienvenida" width="600"/>
-  <p><em>Página de bienvenida con efecto parallax</em></p>
+  <img src="img/2.png" alt="Página de Bienvenida" width="600"/>
+  <p><em>Lo primero que se abre - Página de bienvenida con efecto parallax</em></p>
 </div>
 
-1. **Página de Bienvenida**: Desplázate hacia abajo para descubrir el juego
-2. **Iniciar Partida**: Haz clic en "Iniciar Juego"
-3. **Encontrar Pares**: Click en las cartas para voltearlas y encontrar pares
-4. **Ganar**: Encuentra todos los pares antes de perder las 5 vidas
-5. **Reiniciar**: Vuelve a jugar cuando termines
-
+### 2. Continúa la Aventura
 <div align="center">
-  <img src="img/image copy 2.png" alt="Juego en Progreso" width="600"/>
-  <p><em>Jugando y encontrando pares de cartas</em></p>
+  <img src="img/1.png" alt="Continúa la Aventura" width="600"/>
+  <p><em>Haciendo scroll y yendo al juego</em></p>
 </div>
 
-## 🎯 Mecánicas del Juego
-
+### 3. El Juego se Abre
 <div align="center">
-  <img src="img/image copy 3.png" alt="Victoria del Juego" width="600"/>
-  <p><em>¡Victoria! Todos los pares encontrados</em></p>
+  <img src="img/5.png" alt="Juego Iniciado" width="600"/>
+  <p><em>Se abre el juego y me muestra las cartas</em></p>
 </div>
+
+### 4. Las Cartas se Esconden
+<div align="center">
+  <img src="img/3.png" alt="Cartas Escondidas" width="600"/>
+  <p><em>Las cartas se voltean y se esconden</em></p>
+</div>
+
+### 5. Cómo se Juega
+<div align="center">
+  <img src="img/6.png" alt="Jugando" width="600"/>
+  <p><em>Le das click a una y se voltea, al voltear las iguales se quedan en la pantalla</em></p>
+</div>
+
+### 6. Ganaste
+<div align="center">
+  <img src="img/4.png" alt="Victoria" width="600"/>
+  <p><em>Gané, me felicita y aparece el botón de volver a jugar</em></p>
+</div>
+
+## Mecánicas del Juego
 
 - **Vidas**: Comienzas con 5 vidas
 - **Pares**: Encuentra todos los pares de cartas
 - **Pérdida de Vidas**: Pierdes una vida por cada par incorrecto
 - **Victoria**: Encuentra todos los pares antes de quedarte sin vidas
+- **Animaciones**: Efectos suaves al voltear las cartas
+- **Sistema de Puntos**: Rastrea tu progreso en tiempo real
 
-<div align="center">
-  <img src="img/image copy 4.png" alt="Interfaz del Juego" width="600"/>
-  <p><em>Interfaz principal del juego con sistema de vidas</em></p>
-</div>
-
-## 🔧 Personalización
+## Personalización
 
 ### Agregar Nuevas Cartas
 
@@ -130,7 +143,7 @@ Modifica `style.css` para cambiar:
 - Tamaños de las cartas
 - Efectos visuales
 
-## 🌟 Características Técnicas
+## Características Técnicas
 
 ### Backend (PHP)
 
@@ -152,7 +165,7 @@ Modifica `style.css` para cambiar:
 - **Efectos Parallax**: Scroll animado en la página principal
 - **Transiciones Suaves**: Animaciones fluidas y profesionales
 
-## 🐛 Solución de Problemas
+## Solución de Problemas
 
 ### Problemas Comunes
 
@@ -166,7 +179,7 @@ Modifica `style.css` para cambiar:
 - **PHP errors**: Habilita display_errors en desarrollo
 - **Logs del servidor**: Revisa error_log para problemas del servidor
 
-## 🤝 Contribuir
+## Contribuir
 
 ¡Las contribuciones son bienvenidas!
 
@@ -176,11 +189,11 @@ Modifica `style.css` para cambiar:
 4. Push a la rama (`git push origin feature/nueva-caracteristica`)
 5. Crear un Pull Request
 
-## 📝 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
-## 👤 Autor
+## Autor
 
 <div align="center">
   <img src="https://avatars.githubusercontent.com/u/your-user-id?s=200" alt="Sebastian Henao" width="100" style="border-radius: 50%;"/>
@@ -190,7 +203,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 - GitHub: [@henao06](https://github.com/henao06)
 - Proyecto: [Memory Quest](https://github.com/henao06/Memory_Quest)
 
-## 🙏 Agradecimientos
+## Agradecimientos
 
 - Tailwind CSS por el framework de estilos
 - Comunidad PHP por las mejores prácticas
@@ -199,6 +212,6 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para má
 ---
 
 <div align="center">
-  <p>⭐ Si te gusta este proyecto, ¡dale una estrella!</p>
-  <p>🎮 ¡Diviértete jugando y mejorando tu memoria!</p>
+  <p>Si te gusta este proyecto, ¡dale una estrella!</p>
+  <p>¡Diviértete jugando y mejorando tu memoria!</p>
 </div>
